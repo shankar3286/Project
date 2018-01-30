@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jwt.spring</groupId>
+    <groupId>devops</groupId>
     <artifactId>Library</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Library</name>
+    <name>Library Maven webapp</name>
     <url>http://maven.apache.org</url>
        <!-- Specifying the Versions of Spring, Hiberante, MySQL etc -->
        <properties>
@@ -16,7 +16,7 @@
         <servlet-api-version>3.1.0</servlet-api-version>
         <jsp-version>2.1</jsp-version>
         <jstl-version>1.2</jstl-version>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
         
     </properties>
        <dependencies>
@@ -111,16 +111,25 @@
               <finalName>Library</finalName>
               <plugins>
               <plugin>
+ 		<groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
+				
+		<configuration>
                     <includes>
                         <include>**/*Tests.java</include>
                     </includes>
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>webapp\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.7.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
