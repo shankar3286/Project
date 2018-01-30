@@ -111,6 +111,7 @@
        <build>
               <finalName>Library</finalName>
               <plugins>
+<<<<<<< HEAD
 		<plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-surefire-plugin</artifactId>
@@ -125,6 +126,23 @@
                 <artifactId>maven-war-plugin</artifactId>
                		<version>1.0-SNAPSHOT</version>
 		 <configuration>
+                    <webXml>webapp\WEB-INF\web.xml</webXml>
+=======
+              <plugin>
+ 		<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+				
+		<configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+>>>>>>> 8cf415c0529401591f609e319fcaad565171862b
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
                     <webXml>webapp\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
